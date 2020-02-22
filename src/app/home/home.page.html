@@ -1,20 +1,36 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
+  <ion-toolbar color="dark">
+    <ion-title class="center">
+      Know Information App
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-slides>
+    <ion-slide>
+      <div class="slide">
+        <img src="assets/images/logo.png">
+        <h2>Welcome</h2>
+        <p>Please go through the slides to know what can you do with the app.</p>
+      </div>
+    </ion-slide>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-slide>
+      <div class="slide">
+        <img src="assets/images/venues.jpg"/>
+        <h2>Venues</h2>
+        <p>The app provides information about the venues in the city entered by the user.</p>
+      </div>
+    </ion-slide>
+
+    <ion-slide>
+      <div class="slide">
+        <img src="assets/images/knowledege.jpg"/>
+        <h2>Knowledge</h2>
+        <p>The app also helps users to get information about any thing the user provides.</p>
+        <ion-button fill="clear" (click)="navigateToRegister()">Continue <ion-icon slot="end" name="arrow-forward"></ion-icon></ion-button>
+      </div>
+    </ion-slide>
+  </ion-slides>
 </ion-content>

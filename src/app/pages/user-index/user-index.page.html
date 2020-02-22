@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="center mr-60">My Account</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="account-info">
+  
+    <!-- <ion-card>
+      <ion-card-header>
+        <ion-card-title>Profile Details</ion-card-title>
+      </ion-card-header>
+      <ion-card-content *ngIf="!profileData">
+        <p>Click here to <a [routerLink]="profile">add</a> the details.</p>
+      </ion-card-content>
+      <ion-card-content *ngIf="profileData">
+          <p>{{profileData.fname + ' ' + profileData.lname}}</p>
+          <p>{{profileData.email}}</p>
+          <p>{{profileData.mobile}}</p>
+          <p>Click here to <a [routerLink]="['/profile']">edit</a> the details.</p>
+      </ion-card-content>
+    </ion-card> -->
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Recent Venues</ion-card-title>
+      </ion-card-header>
+      <ion-card-content *ngIf="!recentVenues">
+        <p>There are no venues searched recently</p>
+      </ion-card-content>
+      <ion-card-content *ngIf="recentVenues">
+        <strong>{{recentVenues.name}}</strong>
+        <p>{{recentVenues.catName}}</p>
+        <p>{{recentVenues.address}}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Recent Keywords Search</ion-card-title>
+      </ion-card-header>
+      <ion-card-content *ngIf="!recentSearches">
+        <p>There are no words searched recently</p>
+      </ion-card-content>
+      <ion-card-content *ngIf="recentSearches">
+        <strong>{{recentSearches.name}}</strong>
+        <p>{{recentSearches.desc}}</p>
+      </ion-card-content>
+    </ion-card>
+
+    <!-- <ion-card>
+      <ion-card-header>
+        <ion-card-title>Location</ion-card-title>
+      </ion-card-header>
+      <ion-card-content *ngIf="!location">
+        <p>There is no location added. Cick here to <a [routerLink]="['/settings']">Add</a></p>
+      </ion-card-content>
+      <ion-card-content *ngIf="location">
+        <p>The default location is <strong>{{location}}</strong>.</p>
+        <p class="edit-link"><a [routerLink]="['/settings']">Edit</a></p>
+      </ion-card-content>
+    </ion-card> -->
+  </div>
+  <ion-tabs padding position="fixed"color="dark">
+    <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="venues">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>Venues</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="knowledge">
+        <ion-icon name="information-circle-outline"></ion-icon>
+        <ion-label>Knowledge</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="settings">
+        <ion-icon name="settings"></ion-icon>
+        <ion-label>Settings</ion-label>
+      </ion-tab-button>
+    </ion-tab-bar>
+  </ion-tabs>
+</ion-content>

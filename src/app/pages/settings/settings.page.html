@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="center ml-60">Settings</ion-title>
+    <a class="back-link" (click)="goBack()"> <ion-icon name="arrow-back"></ion-icon> Back</a> 
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="center">Provide your City</h2>
+  <form>
+    <ion-item>
+      <ion-label position="floating" color="dark">City Name</ion-label>
+      <ion-input type="text" [(ngModel)]="location" name ="location"></ion-input>
+    </ion-item>
+    <div class="error-message p-10" *ngIf="showError">
+      <span class="alert alert-danger">Please enter city name.</span>
+    </div>
+    <ion-button class="mt-10" expand="block" shape="round" color="dark" (click)="updateLocation()">
+      Update
+    </ion-button>
+  </form>
+</ion-content>

@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="center ml-60">Knowledge</ion-title>
+    <a class="back-link" (click)="goBack()"> <ion-icon name="arrow-back"></ion-icon> Back </a>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h2 class="center">Provide your Word</h2>
+  <form>
+    <ion-item>
+      <ion-label position="floating" color="dark">Word to search</ion-label>
+      <ion-input type="text" [(ngModel)]="keyword" name ="keyword"></ion-input>
+    </ion-item>
+    <div class="error-message p-10" *ngIf="showMessage">
+      <span class="alert alert-danger">Please enter kewword to search.</span>
+    </div>
+    <ion-button class="mt-10 center" expand="" shape="round" color="dark" (click)="getDetails()">
+      Get Details
+    </ion-button>
+  </form>
+  <div class="results" *ngIf="knowledgeData.length > 0">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Result</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-card *ngFor="let result of knowledgeData">
+      <img src=""/>
+      <ion-card-header>
+        <ion-card-subtitle>{{result.type}}</ion-card-subtitle>
+        <ion-card-title>{{result.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{result.desc}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

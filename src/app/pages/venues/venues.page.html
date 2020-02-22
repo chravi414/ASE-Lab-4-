@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="center ml-60">Venues</ion-title>
+    <a class="back-link" (click)="goBack()"> <ion-icon name="arrow-back"></ion-icon> Back </a>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="no-default-city" *ngIf="venues.length === 0">
+    <h2 class="center">Provide your City</h2>
+    <form>
+      <ion-item>
+        <ion-label position="floating" color="dark">City</ion-label>
+        <ion-input type="text" [(ngModel)]="city" name ="city"></ion-input>
+      </ion-item>
+      <div class="error-message p-10" *ngIf="showMessage">
+        <span class="alert alert-danger">Please enter city to get the near by venue details.</span>
+      </div>
+      <ion-button class="mt-10 center" expand="" shape="round" color="dark" (click)="getVenues()">
+        Get Venues
+      </ion-button>
+    </form>
+  </div>
+
+  <div class="results" *ngIf="venues.length > 0">
+    <div class="p-10">
+      <p>The below are the list of  top 5 Venues in the <strong>{{userDefaultLocation | uppercase}} </strong></p>
+      <p><a (click)="resetVenues()">Click here</a> to search in other location.</p>
+    </div>
+    <ion-card *ngFor="let venue of venues">
+      <ion-card-header>
+        <ion-card-subtitle>{{venue.catName}}</ion-card-subtitle>
+        <ion-card-title>{{venue.name}}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{venue.address}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>
+

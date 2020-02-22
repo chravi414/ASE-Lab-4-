@@ -1,5 +1,7 @@
 {
   "name": "ase-lab4-latest",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

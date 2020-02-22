@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title class="center mr-60">My Profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile">
+    <form [formGroup]="profileForm">
+      <ion-list>
+        <ion-item>
+          <ion-label position="floating" color="dark"> First Name </ion-label>
+          <ion-input type="text" formControlName="fname" name ="fname"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" color="dark"> Last Name </ion-label>
+          <ion-input type="text" formControlName="lname" name ="lname"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" color="dark"> Email Id</ion-label>
+          <ion-input type="email" formControlName="email" name ="email" readonly></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating" color="dark">Mobile Number</ion-label>
+          <ion-input type="tel" formControlName="mobile" name ="mobile"></ion-input>
+        </ion-item>
+        <ion-button expand="block" shape="round" color="dark" (click)="saveDetails()">
+          Submit
+        </ion-button>
+      </ion-list>
+    </form>
+  </div>
+</ion-content>
+
+
